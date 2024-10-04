@@ -31,7 +31,7 @@ npm install
 To start the development server, run the following command:
 
 ```bash
-npm run dev
+npm run start
 ```
 
 ### 3. View the Project

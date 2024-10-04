@@ -1,0 +1,15 @@
+.search-wrapper {
+  margin: 200px 0 40px 0;
+  display: flex;
+  gap: 20px;
+}
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  p.error {
+    color: #fff;
+    font-size: 2rem;
+  }
+}
