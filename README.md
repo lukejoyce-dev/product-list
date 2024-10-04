@@ -12,7 +12,7 @@ This project is a React-based product list application, featuring the ability to
 
 ## Purpose
 
-This project was developed with a focus on **using minimal frameworks and dependencies** to showcase my abilities in building efficient, scalable applications with essential tools only. The aim is to provide a clean and lightweight setup.
+This project was developed with a focus on **using minimal frameworks and dependencies** to showcase my abilities.
 
 ---
 
