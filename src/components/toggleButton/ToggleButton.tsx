@@ -1,27 +1,47 @@
 import React from "react";
 import "./ToggleButton.scss";
+
 interface ToggleButtonProps {
   value: boolean;
-  setValue: React.Dispatch<React.SetStateAction<boolean>>;
-  text: string;
+  onToggle: (newValue: boolean) => void;
+  text?: string;
+  trueLabel?: string;
+  falseLabel?: string;
+  className?: string;
+  disabled?: boolean;
+  id?: string;
 }
+
 const ToggleButton: React.FC<ToggleButtonProps> = ({
   value,
-  setValue,
+  onToggle,
   text,
+  trueLabel = "On",
+  falseLabel = "Off",
+  className = "",
+  disabled = false,
+  id,
 }) => {
   const handleClick = () => {
-    setValue(!value);
+    if (!disabled) {
+      onToggle(!value);
+    }
   };
 
   return (
     <button
-      className={`toggle-button ${value ? "active" : "inactive"}`}
+      id={id}
+      className={`toggle-button ${value ? "active" : "inactive"} ${className}`}
       type="button"
       onClick={handleClick}
-      data-testid="toggle-button"
+      disabled={disabled}
+      data-testid={id || "toggle-button"}
     >
-      {text}: {value ? "On" : "Off"}
+      {text
+        ? `${text}: ${value ? trueLabel : falseLabel}`
+        : value
+        ? trueLabel
+        : falseLabel}
     </button>
   );
 };

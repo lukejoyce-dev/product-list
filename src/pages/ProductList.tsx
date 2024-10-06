@@ -51,8 +51,12 @@ const ProductList: React.FC = () => {
         />
         <ToggleButton
           value={showCheapest}
-          setValue={setShowCheapest}
+          onToggle={setShowCheapest}
           text="Show Cheapest"
+          trueLabel="On"
+          falseLabel="Off"
+          className="custom-toggle"
+          id="toggle-cheapest"
         />
       </div>
       <div className="results">{renderProducts()}</div>

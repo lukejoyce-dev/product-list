@@ -34,7 +34,7 @@ describe("ProductList Component", () => {
   it('Shows the top 5 cheapest products when "Show Cheapest" is toggled', () => {
     render(<ProductList />);
 
-    const toggleButton = screen.getByTestId("toggle-button");
+    const toggleButton = screen.getByTestId("toggle-cheapest");
     fireEvent.click(toggleButton);
 
     // Verify that the top 5 cheapest items are displayed
@@ -59,7 +59,7 @@ describe("ProductList Component", () => {
   it("Toggles between cheapest and all products", () => {
     render(<ProductList />);
 
-    const toggleButton = screen.getByTestId("toggle-button");
+    const toggleButton = screen.getByTestId("toggle-cheapest");
 
     // Initially should show all products
     expect(screen.getByText("Item A")).toBeInTheDocument();
@@ -81,7 +81,7 @@ describe("ProductList Component", () => {
     const searchInput = screen.getByTestId("search-input");
     expect(searchInput.value).toBe(""); // Verify that the search input starts off empty
 
-    const toggleButton = screen.getByTestId("toggle-button");
+    const toggleButton = screen.getByTestId("toggle-cheapest");
     expect(toggleButton).toHaveTextContent("Show Cheapest"); // Verify the initial text of the toggle button
   });
 
