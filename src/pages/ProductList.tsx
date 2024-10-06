@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Product from "../components/product/Product";
-import Search from "../components/search/Search";
+import Input from "../components/input/Input";
 import ToggleButton from "../components/toggleButton/ToggleButton";
 import data from "../data/products.json";
 import "./ProductList.scss";
@@ -41,7 +41,14 @@ const ProductList: React.FC = () => {
   return (
     <>
       <div className="search-wrapper">
-        <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        <Input
+          type="text"
+          value={searchQuery}
+          onChange={setSearchQuery}
+          placeholder="Search for products..."
+          className="search-input"
+          id="search-input"
+        />
         <ToggleButton
           value={showCheapest}
           setValue={setShowCheapest}
